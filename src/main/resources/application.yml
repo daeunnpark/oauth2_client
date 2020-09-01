@@ -1,6 +1,5 @@
 server:
   port: 8082
-  #forwardHeadersStrategy: NATIVE
 
 security:
   oauth2:
@@ -9,8 +8,8 @@ security:
       clientSecret: w
       accessTokenUri: http://localhost:8081/api/oauth/token
       userAuthorizationUri: http://localhost:8081/api/oauth/authorize
-      preEstablishedRedirectUri: http://localhost:8082/userInfo
-      use-current-uri: false
+      #redirectUri: http://localhost:8082/login
+      #use-current-uri: false
     resource:
       userInfoUri: http://localhost:8081/api/principal
 

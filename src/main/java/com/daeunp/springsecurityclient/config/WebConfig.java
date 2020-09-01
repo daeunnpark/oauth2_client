@@ -26,6 +26,7 @@ public class WebConfig implements WebMvcConfigurer{
 				.setViewName("forward:/home");
 		registry.addViewController("/home");
 		registry.addViewController("/userInfo");
+
 	}
 	
 	@Override

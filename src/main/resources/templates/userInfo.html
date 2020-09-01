@@ -7,9 +7,13 @@
 
 <body>
   <div layout:fragment="content">
-    <h1 th:text="|안녕하세요, ${username}님!|"></h1>
-    <span th:text="|${username}님의	 id 번호 : ${id}|" />
-     <!--<span th:text = ${#authentication.name}></span>-->
+    <h1>안녕하세요!!예쓰!!</h1>
+    <!--
+   <h1 th:text="|안녕하세요, ${username}님!|"></h1>
+
+   <span th:text="${#authentication.name}" />
+   <span th:text="|${authentication.name}|" />
+    <span th:text = ${#authentication.name}></span>-->
     <form class="form-signin" th:action="@{/logout}" method="POST">
       <button class="btn btn-md btn-success btn-block" type="Submit">로그아웃</button>
     </form>
