@@ -1,3 +1,5 @@
+# Parameters required by OHauth2(Oauth2) API
+
 server:
   port: 8082
 
@@ -6,12 +8,12 @@ security:
     client:
       clientId: q
       clientSecret: w
-      accessTokenUri: http://localhost:8081/api/oauth/token
-      userAuthorizationUri: http://localhost:8081/api/oauth/authorize
+      accessTokenUri: http://10.113.97.165:8081/api/oauth/token
+      userAuthorizationUri: http://10.113.97.165:8081/api/oauth/authorize
       #redirectUri: http://localhost:8082/login
       #use-current-uri: false
     resource:
-      userInfoUri: http://localhost:8081/api/principal
+      userInfoUri: http://10.113.97.165:8081/api/principal
 
 spring:
   thymeleaf:
