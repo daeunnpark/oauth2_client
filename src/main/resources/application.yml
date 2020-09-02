@@ -1,18 +1,17 @@
 server:
   port: 8082
-  #forwardHeadersStrategy: NATIVE
 
 security:
   oauth2:
     client:
-      clientId: q
-      clientSecret: w
-      accessTokenUri: http://localhost:8081/api/oauth/token
-      userAuthorizationUri: http://localhost:8081/api/oauth/authorize
+      clientId: thisismyveryfirstapp1599060503084
+      clientSecret: e5aa2f86da8dcdeac00bf8bec735668e17460de8d356b78203321a934b849489
+      accessTokenUri: http://10.113.97.165:8081/api/oauth/token
+      userAuthorizationUri: http://10.113.97.165:8081/api/oauth/authorize
       #preEstablishedRedirectUri: http://localhost:8082/login/oauth2/code
       #use-current-uri: false
     resource:
-      userInfoUri: http://localhost:8081/api/principal
+      userInfoUri: http://10.113.97.165:8081/api/principal
 
 spring:
   thymeleaf:

@@ -21,13 +21,9 @@ public class OauthConfig extends WebSecurityConfigurerAdapter{
 			.antMatchers("/", "/login")
 			.permitAll()
 			.anyRequest()
-			.authenticated();
-		
-		/*
-		http.sessionManagement()
-        	.sessionCreationPolicy(SessionCreationPolicy.STATELESS);s
-		 */
-        
+			.authenticated()
+			.and()
+				.logout().permitAll();
 	}
 	
 	@Override

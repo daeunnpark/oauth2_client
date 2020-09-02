@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{default}">
 
 <head>
   <title>회원 정보</title>
@@ -7,13 +7,13 @@
 
 <body>
   <div layout:fragment="content">
-    <h1>ANY TIME BABY</h1>
-    <!--
-   <h1 th:text="|안녕하세요, ${username}님!|"></h1>
-
-   <span th:text="${#authentication.name}" />
-   <span th:text="|${authentication.name}|" />
-    <span th:text = ${#authentication.name}></span>-->
+    <div sec:authorize="isAuthenticated()">
+      <h1 th:text="|안녕하세요, ${name}님!|"></h1>
+      <h2>개인정보</h2>
+      <span th:text="|ID: ${username}|"></span>
+      <span th:text="|이름: ${name}|"></span>
+      <span th:text="|권한: ${role}|"></span>
+    </div>
     <form class="form-signin" th:action="@{/logout}" method="POST">
       <button class="btn btn-md btn-success btn-block" type="Submit">로그아웃</button>
     </form>
