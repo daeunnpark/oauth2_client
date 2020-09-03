@@ -28,7 +28,7 @@ public class pageController {
 
         ModelAndView page = new ModelAndView();
         page.setViewName("userInfo");
-        page.addObject("name", user.getUsername());
+        page.addObject("username", user.getUsername());
         page.addObject("name", user.getName());
         page.addObject("role", user.getRoles());
 

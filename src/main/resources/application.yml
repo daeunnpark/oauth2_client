@@ -4,12 +4,10 @@ server:
 security:
   oauth2:
     client:
-      clientId: thisismyveryfirstapp1599060503084
-      clientSecret: e5aa2f86da8dcdeac00bf8bec735668e17460de8d356b78203321a934b849489
+      clientId: firstapp1599109189098
+      clientSecret: 62f41ea9224bde26b0d16ca8a78d9e4d7a41d3853577e12765b48d1781077109
       accessTokenUri: http://10.113.97.165:8081/api/oauth/token
       userAuthorizationUri: http://10.113.97.165:8081/api/oauth/authorize
-      #preEstablishedRedirectUri: http://localhost:8082/login/oauth2/code
-      #use-current-uri: false
     resource:
       userInfoUri: http://10.113.97.165:8081/api/principal
 
