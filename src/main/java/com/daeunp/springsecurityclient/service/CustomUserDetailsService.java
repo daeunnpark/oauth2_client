@@ -1,6 +1,6 @@
 package com.daeunp.springsecurityclient.service;
 
-import com.daeunp.springsecurityclient.model.MyUserDetails;
+import com.daeunp.springsecurityclient.model.CustomUserDetails;
 import com.daeunp.springsecurityclient.model.User;
 import com.daeunp.springsecurityclient.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class MyUserDetailService implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
     UserRepository userRepository;
@@ -21,7 +21,7 @@ public class MyUserDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) {
         Optional<User> user = userRepository.findByUsername(username);
         user.orElseThrow(() -> new UsernameNotFoundException("Username not found: " + username));
-        return user.map(MyUserDetails::new).get();
+        return user.map(CustomUserDetails::new).get();
     }
 
     public User findByUsername(String username) {

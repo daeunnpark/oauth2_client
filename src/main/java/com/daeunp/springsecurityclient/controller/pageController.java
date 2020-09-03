@@ -1,7 +1,7 @@
 package com.daeunp.springsecurityclient.controller;
 
 import com.daeunp.springsecurityclient.model.User;
-import com.daeunp.springsecurityclient.service.MyUserDetailService;
+import com.daeunp.springsecurityclient.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,7 @@ import java.security.Principal;
 public class pageController {
 
     @Autowired
-    MyUserDetailService myUserDetailService;
+    CustomUserDetailsService userService;
 
     @GetMapping(value = {"/", "/home"})
     public ModelAndView home() {
@@ -24,7 +24,7 @@ public class pageController {
 
     @GetMapping("/userInfo")
     public ModelAndView userInfo(Principal principal) {
-        User user = myUserDetailService.findByUsername(principal.getName());
+        User user = userService.findByUsername(principal.getName());
 
         ModelAndView page = new ModelAndView();
         page.setViewName("userInfo");
