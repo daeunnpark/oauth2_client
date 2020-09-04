@@ -6,10 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableOAuth2Sso
+//@EnableOAuth2Client
 public class OauthConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -19,8 +21,7 @@ public class OauthConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/", "/login").permitAll()
                     .anyRequest().authenticated()
                     .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                    .invalidateHttpSession(true).clearAuthentication(true).deleteCookies("JESSIONID");
+                .logout().logoutSuccessUrl("/");
     }
 
     @Override

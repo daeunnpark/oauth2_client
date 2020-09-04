@@ -4,12 +4,10 @@ server:
 security:
   oauth2:
     client:
-      clientId: xyxy1599136865693
-      clientSecret: aa09583ba7ab131fdcae1fbd7c1bc89d777f09e73caba2339d3f0ffec021a1df
+      clientId: ababa1599132186874
+      clientSecret: 6be304f73cd8aeae4eead1780f607525ace3e03e5c45bf5d2b617f6eb8504905
       accessTokenUri: http://localhost:8081/api/oauth/token
       userAuthorizationUri: http://localhost:8081/api/oauth/authorize
-      #preEstablishedRedirectUri: http://localhost:8082/login/oauth2/code/OHAUTH
-      #useCurrentUri: false
     resource:
       userInfoUri: http://localhost:8081/api/principal
 
